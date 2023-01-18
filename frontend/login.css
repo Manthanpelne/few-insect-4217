@@ -1,0 +1,92 @@
+#nav{
+    display:flex;
+    justify-content:space-around;
+    background-color:rgb(5, 11, 5);
+    color:white;
+    padding-top:20px;
+    height:80px;
+}
+.background{
+    background: linear-gradient(45deg,#e0dfec,#b1b3b7);
+}
+#nav>div{
+    display:flex;
+    gap:30px;
+    color: white;
+    font-size: 20px;
+    border:1px solid black;
+    
+}
+button{
+    width:80px;
+    height:40%;
+    font-size: 20px;
+    margin:10px;
+    color: rgb(90, 88, 88);
+}
+
+.heading-line{
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: lighter;
+    font-size: 30px;
+    color:rgb(87, 84, 84);
+}
+
+#parent{
+    width:30%;
+    color: white;
+    border-radius: 15px;
+    margin: 50px auto;
+    height:500px;
+    background: linear-gradient(45deg,#3f5370,#65a9ed);
+    text-align: center;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    padding:20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   
+}
+
+form{
+    text-align: center;
+}
+form>button{
+    width:60%;
+    padding:5px;
+    font-size:15px;
+    height:40px;
+}
+
+form>button:nth-child(1){
+    background-color: rgb(93, 93, 205);
+    color:white;
+    border: 1px solid  rgb(93, 93, 205);
+}
+
+input{
+    height:30px;
+    width:60%;
+    border-radius: 50px;
+}
+.home{
+    color:white;
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+form a{
+    color:white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#con{
+    width:60%;
+    height: 40px;
+    font-size: 18px;
+    margin-top: 20px;
+    background-color: rgb(55, 125, 55);
+    color:white;
+    border: 1px solid rgb(55, 125, 55);;
+}
