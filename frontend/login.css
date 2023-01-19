@@ -7,7 +7,7 @@
     height:80px;
 }
 .background{
-    background: linear-gradient(45deg,#e0dfec,#b1b3b7);
+    background: linear-gradient(45deg,#0a0a0a,#0a0a0a);
 }
 #nav>div{
     display:flex;
@@ -39,7 +39,7 @@ button{
     border-radius: 15px;
     margin: 50px auto;
     height:500px;
-    background: linear-gradient(45deg,#3f5370,#65a9ed);
+    background: linear-gradient(45deg,#b5ad55,#9d0c8a);
     text-align: center;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
     padding:20px;
@@ -86,7 +86,7 @@ form a{
     height: 40px;
     font-size: 18px;
     margin-top: 20px;
-    background-color: rgb(55, 125, 55);
+    background: linear-gradient(45deg,#215433,#31a53e);
     color:white;
     border: 1px solid rgb(55, 125, 55);;
 }
