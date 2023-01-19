@@ -11,16 +11,18 @@
     </style>
 </head>
 <body class="background">
-    <h2 class="heading-line">WELCOME TO TRIPZIE</h2>
+    <h2 class="heading-line">WELCOME TO TRIPZIE
+        <br>REGISTER HERE..
+    </h2>
     <div id="parent">
-        <form>
-            <input placeholder="Enter username" type="username" id="username">
+        <form id="form" method="post">
+            <input placeholder="Enter username" type="text" id="username">
             <br><br>
-            <input placeholder="Enter Email" type="email" id="mail">
+            <input placeholder="Enter Email" type="text" id="mail">
             <br><br>
-            <input placeholder="Enter Password" type="Password" id="pass">
+            <input placeholder="Enter Password" type="text" id="pass"/>
             <br><br>
-            <input placeholder="Enter age" type="age" id="age">
+            <input placeholder="Enter age" type="text" id="age">
             <p>OR</p>
             <div class="ion-logo">
                 <div><ion-icon name="logo-facebook"></ion-icon></div>
@@ -38,3 +40,38 @@
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </html>
+
+<script>
+
+let registerBtn = document.querySelector("#form")
+registerBtn.addEventListener("submit",registerUser);
+
+async function registerUser(event){
+    try {
+        event.preventDefault()
+    let registerData = document.querySelectorAll("#form input")
+    let userobj={
+        username:form.username.value,
+        email:form.mail.value,
+        pass:form.pass.value,
+        age:form.age.value
+    }
+    
+    let registerRequest = await fetch("http://localhost:4500/user/register",{
+        method:"POST",
+        headers:{
+            "content-type":"application/json",
+        },
+        body:JSON.stringify(userobj)
+    })
+    if(registerRequest.ok){
+        alert("User has been registered!")
+        console.log({"msg":"Registration successfull"})
+        window.location.href="login.html"
+    }
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+</script>
