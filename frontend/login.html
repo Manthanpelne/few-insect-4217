@@ -11,23 +11,60 @@
     </style>
 </head>
 <body class="background">
-    <h2 class="heading-line">WELCOME TO TRIPZIE</h2>
+    <h2 class="heading-line">WELCOME TO TRIPZIE,<br> LOGIN HERE..</h2>
     <div id="parent">
-        <form>
-            <p>Already a user? please login!</p>
+        <form id="form" method="post">
             <button><ion-icon name="logo-facebook"></ion-icon>  Continue with Facebook</button><br>
             <button> <ion-icon class="ion" name="logo-google"></ion-icon>  Continue with Google</button><br>
             <button><ion-icon name="logo-apple"></ion-icon>  Continue with Apple</button><br>
             <p>OR</p>
             <input placeholder="Enter Email" type="email" id="mail">
-<br><br>
-            <input placeholder="Enter Password" type="Password" id="pass">
-           
+            <br><br>
+            <input placeholder="Enter Password" type="text" id="pass">
+            
             <br>
             <input id="con" type="submit" value="Continue"/>
         </form>
+        <p>New to Tripzie? please register first by clicking <a href="signup.html">here</a></p>
     </div>
 </body>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </html>
+
+
+<script>
+    let loginBtn = document.querySelector("#form")
+    loginBtn.addEventListener("submit",loginFunction);
+
+    async function loginFunction(event){
+    try {
+        event.preventDefault()
+        let loginobj={
+            email:form.mail.value,
+            pass:form.pass.value
+        }
+
+        let loginRequest = await fetch("http://localhost:4500/user/login",{
+            method:"POST",
+            body:JSON.stringify(loginobj),
+        headers:{
+            "content-type":"application/json",
+        },
+        })
+        if(loginRequest.ok){
+            alert("Login successfull..")
+            let token = await loginRequest.json()
+             localStorage.setItem("token",token.token)
+             console.log(token)
+             window.location.href="hotelhome.html"
+        }
+           else{
+            console.log("something is wrong..please try again")
+           }
+    } catch (error) {
+        console.log(error)
+    }
+    }
+
+</script>
