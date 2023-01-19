@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hotels</title>
+    <style>
+      #nav {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 460px;
+        padding-left: 40px;
+      }
+      .category {
+        background-color: white;
+        border-radius: 12px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 15px;
+        text-align: center;
+      }
+
+      .category img {
+        width: 140px;
+        height: 35px;
+      }
+      .category span {
+        padding: 12px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        align-items: center;
+        color: rgb(80, 79, 79);
+      }
+      .category ion-icon {
+        padding-left: 15px;
+      }
+      .category span:nth-child(3) {
+        color: #065af3;
+      }
+
+      #searchinside {
+        background-color: black;
+        height: 100px;
+        margin-top: 20px;
+      }
+      #searchbar {
+        width: 60%;
+        margin: auto;
+        font-size: 13px;
+        color: white;
+        height: 80px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 13px;
+      }
+
+      #searchbar > div {
+        border-radius: 10px;
+        background-color: rgb(70, 70, 83);
+        margin-top: 13px;
+        padding-left: 10px;
+        font-size: 12px;
+      }
+      #searchbar p {
+        color: rgb(87, 188, 216);
+      }
+      #searchbar button {
+        width: 100px;
+        height: 40px;
+        margin-top: 20px;
+        background-image: linear-gradient(93deg, #53b2fe, #065af3);
+        border: 1px solid rgb(103, 103, 208);
+        border-radius: 11px;
+        margin-left: 20px;
+        color: white;
+      }
+      #city {
+        width: 120px;
+        height: 20px;
+      }
+
+      #banner {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        width: 100%;
+        height: 140px;
+        font-family: sans-serif;
+        background-color: rgb(212, 241, 254);
+      }
+      #banner > div {
+        margin: auto;
+      }
+      #banner h3 {
+        font-size: 21px;
+      }
+      #banner p {
+        font-size: 14px;
+      }
+      .cat > div {
+        display: flex;
+        gap: 20px;
+      }
+
+      #hotel{
+        width: 60%;
+        margin: auto;
+        margin-top: 50px;
+      text-align: center;
+    }
+    
+    .card-list{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 30px;
+        border: 1px solid rgb(149, 149, 149);
+      padding: 20px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-family: sans-serif;
+    }
+    
+    .card{
+        border: 1px solid rgb(149, 149, 149);
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        padding: 14px;
+        background-color:rgb(237, 236, 235)
+ }
+  .card p{
+    font-size: 17px;
+    color: rgb(45, 44, 44);
+  }
+  
+  .card h2{
+    color:rgb(86, 85, 85);
+  }
+   
+
+      #hotel>div img{
+        width: 80%;
+        height:200px;
+        border-radius:7px;
+      }
+
+       .card button{
+        width: 160px;
+        height:30px;
+        font-size: 15px;
+        color: white;
+        border-radius: 34px;
+        border: 1px solid white;
+        background-color: rgb(108, 92, 119);
+       }
+
+
+
+    </style>
+  </head>
+  <body>
+    <div id="nav">
+      <div class="category">
+        <img
+          src="https://imgak.mmtcdn.com/pwa_v3/pwa_hotel_assets/header/logo@2x.png"
+          alt=""
+        />
+        <span><ion-icon name="airplane-outline"></ion-icon>Flights</span>
+        <span><ion-icon name="business-outline"></ion-icon>Hotels</span>
+        <span><ion-icon name="home-outline"></ion-icon>Homestays</span>
+        <span><ion-icon name="train-outline"></ion-icon>Trains</span>
+        <span><ion-icon name="bus-outline"></ion-icon>Buses</span>
+        <span><ion-icon name="car-outline"></ion-icon>Cabs</span>
+        <span><ion-icon name="card-outline"></ion-icon>Forex</span>
+        <span
+          ><ion-icon name="airplane-outline"></ion-icon>Charter Flights</span
+        >
+        <span><ion-icon name="accessibility-outline"></ion-icon>Activites</span>
+      </div>
+      <div>
+        <p>login or <br />create Account</p>
+      </div>
+    </div>
+
+    <div id="searchinside">
+      <div id="searchbar">
+        <div>
+          <p>CITY, AREA OR PROPERTY</p>
+          <select name="" id="city">
+            <option value="city">City</option>
+          </select>
+        </div>
+        <div>
+          <p>CHECK-IN</p>
+          <h2>Fri, 20 Jan 2023</h2>
+        </div>
+        <div>
+          <p>CHECK-OUT</p>
+          <h2>Fri, 20 Jan 2023</h2>
+        </div>
+        <div>
+          <p>ROOMS & GUESTS</p>
+          <h2>1 Room, 2 Adults</h2>
+        </div>
+        <div><button id="searching">Search</button></div>
+      </div>
+    </div>
+
+    <div id="banner">
+      <div class="cat">
+        <p>Home | Hotels and more</p>
+        <h3>Hotels, Villas, Apartments and more of your choice</h3>
+        <div>
+          <p>select trip type</p>
+          <p>popularity</p>
+          <p>showing the results</p>
+        </div>
+      </div>
+      <div>
+        <img
+          width="140px"
+          src="https://imgak.mmtcdn.com/pwa_v3/pwa_hotel_assets/sprite/view-map-new.png"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <div id="hotel">
+    </div>
+  </body>
+  <script
+    type="module"
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+  ></script>
+  <script
+    nomodule
+    src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+  ></script>
+</html>
+
+<script>
+  async function fetchHotelData() {
+    try {
+      let fetchdata = await fetch("http://localhost:4500/hotel/", {
+        method: "GET",
+        headers: {
+          "content-type": "application/json",
+          Authorization: localStorage.getItem("token"),
+        },
+      });
+      let newdata = await fetchdata.json();
+      let value=JSON.parse(localStorage.getItem("city"))
+      
+      let arrdata = newdata.map((item) => {
+        return {
+          img: item.img,
+          name: item.name,
+          location: item.location,
+          price: item.price,
+          rating: item.rating,
+        };
+      });
+      
+   console.log(arrdata)
+      renderCard(arrdata)
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  fetchHotelData();
+
+  let cardData = document.querySelector("#hotel");
+  function renderCard(arrdata) {
+    let cardList = `
+            <div class="card-list">
+                ${arrdata
+                  .map((item) =>
+                    getCard(
+                      item.img,
+                      item.name,
+                      item.location,
+                      item.price,
+                      item.rating
+                    )
+                  )
+                  .join(" ")}
+            </div>
+      `;
+
+    cardData.innerHTML = cardList;
+  }
+
+  function getCard(img, name, location, price, rating) {
+    let card = `
+        <div class="card">
+            <img src=${img}>
+            <h2>${name}</h2>
+            <p>Location: ${location}</p>
+            <p>Price: ₹${price}</p>
+            <p>Rating: ⭐${rating}</p>
+            <button class='order'>Book Now</button>
+        </div>
+      `;
+    return card;
+  }
+</script>
+
+<!-- document.querySelector("#hotel").innerHTML=""
+newdata.forEach((item)=>{
+ let div = document.createElement("div")
+ div.className="card-body"
+ let img = document.createElement("img")
+ img.setAttribute("src",item.img)
+ img.className="card-img"
+ let name=document.createElement("h2")
+ name.innerText=item.name;
+ let location=document.createElement("p")
+ location.innerText=item.location
+ let price=document.createElement("h3")
+ price.innerText=item.price
+ let rating=document.createElement("p")
+ rating.innerText=item.rating
+
+ div.append(img,name,location,price,rating)
+ document.querySelector("#hotel").append(div)
+}) -->
