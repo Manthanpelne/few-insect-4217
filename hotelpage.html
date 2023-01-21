@@ -46,13 +46,13 @@
         margin-top: 20px;
       }
       #searchbar {
-        width: 60%;
+        width: 70%;
         margin: auto;
         font-size: 13px;
         color: white;
         height: 80px;
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(6, 1fr);
         grid-gap: 13px;
       }
 
@@ -75,7 +75,21 @@
         border-radius: 11px;
         margin-left: 20px;
         color: white;
+        cursor: pointer;
       }
+
+      #searchingone {
+        width: 100px;
+        height: 40px;
+        margin-top: 20px;
+        background-image: linear-gradient(93deg, #53b2fe, #065af3);
+        border: 1px solid rgb(103, 103, 208);
+        border-radius: 11px;
+        margin-left: 20px;
+        color: white;
+        cursor: pointer;
+      }
+
       #city {
         width: 120px;
         height: 20px;
@@ -104,55 +118,119 @@
         gap: 20px;
       }
 
-      #hotel{
-        width: 60%;
-        margin: auto;
-        margin-top: 50px;
-      text-align: center;
-    }
-    
-    .card-list{
+      #majorcard{
         display: grid;
         grid-template-columns: repeat(2,1fr);
+        margin-top: 30px;
+      }
+
+
+      #function{
+        width:300px;
+        height:600px;
+        color:rgb(67, 66, 66)
+      }
+      
+
+      #appendfun{
+        margin-right: 300px;
+      }
+     
+
+      #hotel {
+        width: 850px;
+        text-align: center;
+        background-color:rgb(240, 239, 236);
+    
+      }
+
+      .card-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         grid-gap: 30px;
         border: 1px solid rgb(149, 149, 149);
-      padding: 20px;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      font-family: sans-serif;
-    }
-    
-    .card{
+        padding: 20px;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+        font-family: sans-serif;
+      }
+      
+      .card {
         border: 1px solid rgb(149, 149, 149);
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         padding: 14px;
-        background-color:rgb(237, 236, 235)
- }
-  .card p{
-    font-size: 17px;
-    color: rgb(45, 44, 44);
-  }
-  
-  .card h2{
-    color:rgb(86, 85, 85);
-  }
-   
-
-      #hotel>div img{
-        width: 80%;
-        height:200px;
-        border-radius:7px;
+        width:350px ;
+       background-color:white;
+      }
+      .card p {
+        font-size: 17px;
+        color: rgb(45, 44, 44);
       }
 
-       .card button{
+      .card h2 {
+        color: rgb(86, 85, 85);
+      }
+
+      #hotel > div img {
+        width: 80%;
+        height: 200px;
+        border-radius: 7px;
+      }
+
+      .card button {
         width: 160px;
-        height:30px;
+        height: 30px;
         font-size: 15px;
         color: white;
         border-radius: 34px;
         border: 1px solid white;
         background-color: rgb(108, 92, 119);
-       }
+      }
 
+      #sorting{
+        text-align: center;
+        padding: 10px;
+        font-family:sans-serif;
+      }
+      
+      #sorting>div{
+        padding: 5px;
+        padding-left: 50px;
+      }
+      
+      #sorting p{
+        font-weight: bold;
+      }
+
+      #sorting-rating{
+        text-align: center;
+        padding: 10px;
+        font-family:sans-serif;
+      }
+
+      #sorting-rating>div{
+        padding: 5px;
+        padding-left: 50px;
+      }
+
+      #sorting-rating p{
+        font-weight: bold;
+      }
+      
+      #sortByPrice{
+        text-align: center;
+        padding: 10px;
+        font-family:sans-serif;
+      }
+
+      #sortByPrice>div{
+        padding: 5px;
+        padding-left: 50px;
+      }
+
+     #sortByPrice p{
+      font-weight: bold;
+     }
 
 
     </style>
@@ -160,10 +238,12 @@
   <body>
     <div id="nav">
       <div class="category">
-        <img
-          src="https://imgak.mmtcdn.com/pwa_v3/pwa_hotel_assets/header/logo@2x.png"
-          alt=""
-        />
+        <a href="index.html">
+          <img
+            src="https://imgak.mmtcdn.com/pwa_v3/pwa_hotel_assets/header/logo@2x.png"
+            alt=""
+        /></a>
+
         <span><ion-icon name="airplane-outline"></ion-icon>Flights</span>
         <span><ion-icon name="business-outline"></ion-icon>Hotels</span>
         <span><ion-icon name="home-outline"></ion-icon>Homestays</span>
@@ -177,7 +257,7 @@
         <span><ion-icon name="accessibility-outline"></ion-icon>Activites</span>
       </div>
       <div>
-        <p>login or <br />create Account</p>
+        <p>login or <br> create Account</p>
       </div>
     </div>
 
@@ -185,8 +265,12 @@
       <div id="searchbar">
         <div>
           <p>CITY, AREA OR PROPERTY</p>
-          <select name="" id="city">
-            <option value="city">City</option>
+          <select name="" onChange="mycon()">
+            <option value=""></option>
+            <option value="pune">pune</option>
+            <option value="delhi">delhi</option>
+            <option value="mumbai">mumbai</option>
+            <option value="kolkata">kolkata</option>
           </select>
         </div>
         <div>
@@ -201,7 +285,8 @@
           <p>ROOMS & GUESTS</p>
           <h2>1 Room, 2 Adults</h2>
         </div>
-        <div><button id="searching">Search</button></div>
+        <div><button id="searchingone">Search</button></div>
+        <div><button id="searching">All Hotels</button></div>
       </div>
     </div>
 
@@ -224,8 +309,62 @@
       </div>
     </div>
 
-    <div id="hotel">
+    <div id="majorcard">
+      <div id="function">
+          
+        <div id="sorting">
+        <p>Sort by Price</p>
+        <div>
+          <label for="">Low to High</label>
+          <input class="low" type="checkbox" value="low" />
+        </div>
+        <div>
+          <label for="">High to Low</label>
+          <input class="high" type="checkbox" value="high" />
+        </div>
+      </div>
+  
+      <div id="sorting-rating">
+        <p>Sort by Rating</p>
+        <div>
+          <label for="">Low to High</label>
+          <input class="low-rating" type="checkbox" value="low" />
+        </div>
+        <div>
+          <label for="">High to Low</label>
+          <input class="high-rating" type="checkbox" value="high" />
+        </div>
+      </div>
+        
+  
+      <div id="sortByPrice">
+        <p>Sort by Price Range</p>
+        <div>
+          <label for="">₹1000 - ₹5,000</label>
+          <input class="startprice" type="checkbox" value="low" />
+        </div>
+        <div>
+          <label for="">₹5000 - ₹10,000</label>
+          <input class="lowprice" type="checkbox" value="mid" />
+        </div>
+        <div>
+          <label for="">₹10,000 - ₹15,000</label>
+          <input class="highprice" type="checkbox" value="high" />
+        </div>
+      </div>
+
+      </div>
+        
+      <div id="appendfun">
+        <div id="hotel"></div>
+      </div>
     </div>
+
+   
+      
+
+
+   
   </body>
   <script
     type="module"
@@ -237,10 +376,17 @@
   ></script>
 </html>
 
+
+
 <script>
+
+
+  //---------------------fetching-----------------------//
+
+
   async function fetchHotelData() {
     try {
-      let fetchdata = await fetch("http://localhost:4500/hotel/", {
+      let fetchdata = await fetch("http://localhost:4500/hotel", {
         method: "GET",
         headers: {
           "content-type": "application/json",
@@ -248,8 +394,7 @@
         },
       });
       let newdata = await fetchdata.json();
-      let value=JSON.parse(localStorage.getItem("city"))
-      
+
       let arrdata = newdata.map((item) => {
         return {
           img: item.img,
@@ -259,15 +404,102 @@
           rating: item.rating,
         };
       });
-      
-   console.log(arrdata)
-      renderCard(arrdata)
+      coffeedata = arrdata;
+
+      //-------------------sortingprice------------------//
+
+      let pricestart = document.querySelector(".startprice")
+      pricestart.addEventListener("click",()=>{
+     let startPriceData = arrdata.filter((ele)=>{
+        return ele.price<=5000 && ele.price>=1000
+     })
+     renderCard(startPriceData)
+      })
+
+
+      let pricelow = document.querySelector(".lowprice")
+      pricelow.addEventListener("click",()=>{
+     let newfilterdata = arrdata.filter((ele)=>{
+        return ele.price<=10000 && ele.price>=5000
+     })
+     renderCard(newfilterdata)
+      })
+
+      let pricehigh = document.querySelector(".highprice")
+      pricehigh.addEventListener("click",()=>{
+     let highpricedata = arrdata.filter((ele)=>{
+        return ele.price<=15000 && ele.price>=10000
+     })
+     renderCard(highpricedata)
+      })
+
+     
+
+
+      //---------------------sort-price-----------------------//
+
+      let renderSortdata = [];
+      let lowPrice = document.querySelector(".low");
+      lowPrice.addEventListener("click", function () {
+        arrdata.sort((a, b) => {
+          return a.price - b.price;
+        });
+        renderCard(arrdata);
+      });
+
+   
+      let highPrice = document.querySelector(".high");
+      highPrice.addEventListener("click", function () {
+        arrdata.sort((a, b) => {
+          return b.price - a.price;
+        });
+        renderCard(arrdata);
+      });
+
+
+        //---------------------sort by rating-----------------------//
+
+
+        let lowRating = document.querySelector(".low-rating");
+      lowRating.addEventListener("click", function () {
+        arrdata.sort((a, b) => {
+          return a.rating - b.rating;
+        });
+        renderCard(arrdata);
+      });
+
+        let highRating = document.querySelector(".high-rating");
+      highRating.addEventListener("click", function () {
+        arrdata.sort((a, b) => {
+          return b.rating - a.rating;
+        });
+        renderCard(arrdata);
+      });
+
+
+       
+
+
+        //---------------------search-functionality-----------------------//
+
+
+      let searchbtn = document.querySelector("#searching");
+      searchbtn.addEventListener("click", (e) => {
+        renderCard(arrdata);
+      });
+
+      let storage = JSON.parse(localStorage.getItem("city"));
+      let storageData = coffeedata.filter((ele) => {
+        return ele.location == storage.toLowerCase();
+      });
+      renderCard(storageData);
     } catch (error) {
       console.log(error);
     }
   }
 
   fetchHotelData();
+
 
   let cardData = document.querySelector("#hotel");
   function renderCard(arrdata) {
@@ -285,7 +517,7 @@
                   )
                   .join(" ")}
             </div>
-      `;
+            `;
 
     cardData.innerHTML = cardList;
   }
@@ -299,9 +531,19 @@
             <p>Price: ₹${price}</p>
             <p>Rating: ⭐${rating}</p>
             <button class='order'>Book Now</button>
-        </div>
-      `;
+            </div>
+            `;
     return card;
+  }
+
+
+
+  function mycon() {
+    let selected = document.querySelector("select").value;
+    let showdata = coffeedata.filter((ele) => {
+      return ele.location === selected;
+    });
+    renderCard(showdata);
   }
 </script>
 
