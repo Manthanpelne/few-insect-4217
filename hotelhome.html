@@ -15,7 +15,7 @@
    
     <div id="main">
       <div class="nav">
-          <img  class="trip-logo" src="https://imgak.mmtcdn.com/pwa_v3/pwa_hotel_assets/header/mmtLogoWhite.png" alt="">
+        <a href="index.html"> <img  class="trip-logo" src="https://imgak.mmtcdn.com/pwa_v3/pwa_hotel_assets/header/mmtLogoWhite.png" alt=""></a>
         <div>
           <div>
             <img src="https://img.favpng.com/21/1/25/discounts-and-allowances-computer-icons-coupon-png-favpng-pbDs6X6AG9tCdQsbuBrdn10Wf.jpg" alt="">
@@ -47,7 +47,7 @@
         <button class="registerbtn">create account</button>
        </div>
        <div>
-        <button class="registerbtn">Login</button>
+        <button class="loginbtn">Login</button>
        </div>
       </div>
        
@@ -519,5 +519,23 @@ let arr=[]
           localStorage.setItem("city",JSON.stringify(selectedCity))
         }
 
+
+        let searchbtn = document.querySelector(".search")
+        searchbtn.addEventListener("click",(e)=>{
+          e.preventDefault()
+          window.location.href="hotelpage.html"
+        })
+
+        let register = document.querySelector(".registerbtn")
+        register.addEventListener("click",(e)=>{
+          e.preventDefault()
+          window.location.href="signup.html"
+        })
+
+        let login = document.querySelector(".loginbtn")
+        login.addEventListener("click",(e)=>{
+          e.preventDefault()
+          window.location.href="login.html"
+        })
 
 </script>

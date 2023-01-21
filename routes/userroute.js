@@ -30,11 +30,11 @@ userRouter.post("/register", async (req, res) => {
           age,
         });
         await user.save();
-        res.send("registered");
+        res.send({"msg":"Congrats registration successfull!!"});
       }
     });
   } catch (error) {
-    res.send("error in registering the user");
+    res.status(400).send({"msg":"Error while registering!!"});
     console.log(error);
   }
 });
@@ -50,11 +50,11 @@ userRouter.post("/login", async (req, res) => {
           const token = jwt.sign({userID:user[0]._id}, process.env.key);
           res.send({ "msg": "login sucessfull", token: token });
         } else {
-          res.status(400).send({"msg":"wrong credentials"});
+          res.status(400).send({"msg":"wrong credentials! Please try again"});
         }
       });
     } else {
-      res.status(400).send({"msg":"wrong credentials"});
+      res.status(400).send({"msg":"User not found, Please register first!"});
     }
   } catch (error) {
     res.send(error);

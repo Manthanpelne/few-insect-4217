@@ -60,6 +60,19 @@
     font-size: 15px;
     border-radius: 13px;
     border: 1px solid rgb(76, 122, 193);
+    cursor: pointer;
+  }
+
+  .loginbtn{
+    width: 140px;
+    height: 40px;
+    color: white;
+    background-image: linear-gradient(93deg, #53b2fe, #065af3);
+    text-align: center;
+    font-size: 15px;
+    border-radius: 13px;
+    border: 1px solid rgb(76, 122, 193);
+    cursor: pointer;
   }
   
   .category {
@@ -244,6 +257,7 @@
     position: absolute;
     margin-top: 30px;
     margin-left: 449px;
+    cursor: pointer;
   }
   
   .scroll {
