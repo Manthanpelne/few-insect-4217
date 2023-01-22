@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          #nav {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 460px;
+        padding-left: 40px;
+      }
+      .category {
+        background-color: white;
+        border-radius: 12px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: 15px;
+        text-align: center;
+      }
+
+      .category img {
+        width: 140px;
+        height: 35px;
+      }
+      .category span {
+        padding: 12px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        align-items: center;
+        color: rgb(80, 79, 79);
+      }
+      .category ion-icon {
+        padding-left: 15px;
+      }
+      .category span:nth-child(3) {
+        color: #065af3;
+      }
+
+      #searchinside {
+        background-color: black;
+        height: 100px;
+        margin-top: 20px;
+      }
+      #searchbar {
+        width: 70%;
+        margin: auto;
+        font-size: 13px;
+        color: white;
+        height: 80px;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-gap: 13px;
+      }
+
+      #searchbar > div {
+        border-radius: 10px;
+        background-color: rgb(70, 70, 83);
+        margin-top: 13px;
+        padding-left: 10px;
+        font-size: 12px;
+      }
+      #searchbar p {
+        color: rgb(87, 188, 216);
+      }
+      #searchbar button {
+        width: 100px;
+        height: 40px;
+        margin-top: 20px;
+        background-image: linear-gradient(93deg, #53b2fe, #065af3);
+        border: 1px solid rgb(103, 103, 208);
+        border-radius: 11px;
+        margin-left: 20px;
+        color: white;
+        cursor: pointer;
+      }
+
+
+      @media only screen and (max-width:700px){
+        #nav {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        margin: auto;
+        }
+
+        .category{
+          flex-direction: column;
+        }
+
+        #searchbar{
+          height:300px;
+          grid-template-columns: repeat(1,1fr);
+        }
+
+        #banner{
+          margin-top: 500px;
+          display: flex;
+          flex-direction: column;
+        }
+
+       
+      }
+
+
+      #searchingone {
+        width: 100px;
+        height: 40px;
+        margin-top: 20px;
+        background-image: linear-gradient(93deg, #53b2fe, #065af3);
+        border: 1px solid rgb(103, 103, 208);
+        border-radius: 11px;
+        margin-left: 20px;
+        color: white;
+        cursor: pointer;
+      }
+
+      #city {
+        width: 120px;
+        height: 20px;
+      }
+
+      #banner {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        width: 100%;
+        height: 140px;
+        font-family: sans-serif;
+        background-color: rgb(212, 241, 254);
+      }
+      #banner > div {
+        margin: auto;
+      }
+      #banner h3 {
+        font-size: 21px;
+      }
+      #banner p {
+        font-size: 14px;
+      }
+      .cat > div {
+        display: flex;
+        gap: 20px;
+      }
+
+      #hotel {
+        margin: auto;
+        margin-top:40px;
+        width: 850px;
+        text-align: center;
+        
+    
+      }
+
+      .card-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 30px;
+        border: 1px solid rgb(149, 149, 149);
+        padding: 20px;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+        font-family: sans-serif;
+        color:rgb(83, 81, 81);
+      }
+      
+      .cards{
+        border: 1px solid rgb(149, 149, 149);
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        padding: 14px;
+        width:350px ;
+       background-color:white;
+      }
+      .cards p {
+        font-size: 17px;
+        color: rgb(45, 44, 44);
+      }
+
+      .cards h2 {
+        color: rgb(112, 110, 110);
+      }
+
+      #hotel > div img {
+        width: 80%;
+        height: 200px;
+        border-radius: 7px;
+      }
+
+      @media only screen and (max-width:700px){
+      #hotel{
+        height:auto;
+      }
+      .card-list{
+      grid-template-columns: repeat(1,1fr);
+      }
+      }
+
+      .bookbtn {
+        width: 160px;
+        height: 30px;
+        font-size: 15px;
+        color: white;
+        border-radius: 34px;
+        border: 1px solid white;
+        background-color: rgb(108, 92, 119);
+        cursor: pointer;
+      }
+
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <div class="category">
+          <a href="index.html">
+            <img
+              src="https://imgak.mmtcdn.com/pwa_v3/pwa_hotel_assets/header/logo@2x.png"
+              alt=""
+          /></a>
+  
+          <span><ion-icon name="airplane-outline"></ion-icon>Flights</span>
+          <span><ion-icon name="business-outline"></ion-icon>Hotels</span>
+          <span><ion-icon name="home-outline"></ion-icon>Homestays</span>
+          <span><ion-icon name="train-outline"></ion-icon>Trains</span>
+          <span><ion-icon name="bus-outline"></ion-icon>Buses</span>
+          <span><ion-icon name="car-outline"></ion-icon>Cabs</span>
+          <span><ion-icon name="card-outline"></ion-icon>Forex</span>
+          <span
+            ><ion-icon name="airplane-outline"></ion-icon>Charter Flights</span
+          >
+          <span><ion-icon name="accessibility-outline"></ion-icon>Activites</span>
+        </div>
+        <div>
+          <p>login or <br> create Account</p>
+        </div>
+      </div>
+  
+      <div id="searchinside">
+        <div id="searchbar">
+          <div>
+            <p>CITY, AREA OR PROPERTY</p>
+            <select name="" onChange="mycon()">
+              <option value=""></option>
+              <option value="pune">pune</option>
+              <option value="delhi">delhi</option>
+              <option value="mumbai">mumbai</option>
+              <option value="kolkata">kolkata</option>
+            </select>
+          </div>
+          <div>
+            <p>CHECK-IN</p>
+            <h2>Fri, 20 Jan 2023</h2>
+          </div>
+          <div>
+            <p>CHECK-OUT</p>
+            <h2>Fri, 20 Jan 2023</h2>
+          </div>
+          <div>
+            <p>ROOMS & GUESTS</p>
+            <h2>1 Room, 2 Adults</h2>
+          </div>
+          <div><button id="searchingone">Search</button></div>
+          <div><button id="searching">My Bookings</button></div>
+        </div>
+      </div>
+  
+      <div id="banner">
+        <div class="cat">
+          <p>Home | Hotels and more</p>
+          <h3>Hotels, Villas, Apartments and more of your choice</h3>
+          <div>
+            <p>select trip type</p>
+            <p>popularity</p>
+            <p>showing the results</p>
+          </div>
+        </div>
+        <div>
+          <img
+            width="140px"
+            src="https://imgak.mmtcdn.com/pwa_v3/pwa_hotel_assets/sprite/view-map-new.png"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+
+      <div id="hotel">
+          <div class="card-list">
+      </div>
+     
+
+</body>
+</html>
+
+<script>
+
+  let booking = document.querySelector("#searching");
+  booking.addEventListener("click",(e)=>{
+    window.location.href="cartandpayment.html"
+  })
+
+    async function fetchcartdata(){
+        let cartdata = await fetch("https://long-plum-beaver-wrap.cyclic.app/hotel",{
+            method: "GET",
+        headers: {
+          "content-type": "application/json",
+          Authorization: localStorage.getItem("token"),
+        },
+        })
+        let newdata = await cartdata.json()
+        let coffeedata = newdata
+        display(newdata)
+    }
+
+    fetchcartdata()
+
+
+    let cartitem =JSON.parse(localStorage.getItem("cart"))||[]
+
+    function display(coffeedata){
+        document.querySelector(".card-list").innerHTML=""
+        coffeedata.forEach((ele) => {
+            let div = document.createElement("div")
+            div.className="cards"
+            let img = document.createElement("img")
+            img.src=ele.img;
+            img.className="card-img"
+            let name=document.createElement("h2")
+            name.innerText=ele.name;
+            let location = document.createElement("p")
+            location.innerText=ele.location
+            let price=document.createElement("p")
+            price.innerText=ele.price;
+            let rating=document.createElement("p")
+            rating.innerText=ele.rating
+
+            let btn = document.createElement("button")
+            btn.innerText="Book Now";
+            btn.className="bookbtn"
+            btn.addEventListener("click",()=>{
+              cartitem.push(ele)
+              localStorage.setItem("cart",JSON.stringify(cartitem))
+            })
+            
+
+            div.append(img,name,location,price,rating,btn)
+            document.querySelector(".card-list").append(div)
+        });
+    }
+
+</script>
